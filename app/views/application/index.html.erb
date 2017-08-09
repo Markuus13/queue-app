@@ -8,3 +8,11 @@
 <h1>Entrar na Fila</h1>
 <input type="text" name="user-name" value="">
 <button id="submit-user-name" type="button" name="button">Entrar na fila</button>
+
+<script>
+$("#submit-user-name").on("click", function() {
+  $.post("/users", { name: $("input[name='user-name']").val() }, function(data) {
+    console.log("Opa")
+  });
+});
+</script>
